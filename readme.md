@@ -33,8 +33,13 @@ This extension uses a fixed proxy server URL, which is set to `https://your-prox
    - Example: Visiting `https://store.steampowered.com/` will change to `https://your-proxy-url.com/https://store.steampowered.com/`.
 
 ## License
-MIT License - Free to modify and distribute.
+This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.  
+You are free to **use, modify, and distribute** this software under the terms of the GPL-3.0 license.  
+
+### 📜 Full License Text
+You can read the full GPL-3.0 license [here](https://www.gnu.org/licenses/gpl-3.0.html).  
+Additionally, a copy of the license is included in the repository as `LICENSE`.
 
 ---
 
-This README provides installation and usage details specific to the original working version of your extension. Let me know if you’d like any refinements! 🚀  
+Now your README clearly specifies that your extension is under **GPL-3.0**, ensuring proper attribution and compliance. Let me know if you need any refinements! 🚀
