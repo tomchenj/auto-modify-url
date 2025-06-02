@@ -1,42 +1,53 @@
-# URL Proxy Redirect 扩展
+# URL Proxy Redirect Extension
 
-## 简介
-**URL Proxy Redirect** 是一个 Chrome 扩展，它会自动拦截所有浏览器请求，并将 URL 重定向至指定的反代服务器。这样可以用于绕过访问限制或提升访问速度。
+## Introduction
+**URL Proxy Redirect** is a Chrome extension that automatically intercepts browser requests and redirects URLs through a specified proxy server. This can help bypass access restrictions or improve loading speed.
 
-## 功能
-- **自动代理 URL**：所有网页请求都会添加反代前缀
-- **无缝重定向**：无需手动修改链接，浏览器会自动使用代理服务器
-- **支持所有网站**：不局限于特定网站
-- **轻量级**：基于 Chrome 的 `webRequest` API，运行效率高
+## Features
+- **Automatic URL Proxying**: All web requests are redirected through the proxy.
+- **Seamless Redirection**: No need to manually modify links.
+- **Works for All Websites**: Supports any site without configuration.
+- **Lightweight & Efficient**: Uses Chrome’s `webRequest` API for optimal performance.
 
-## 安装步骤
-1. **下载扩展代码**
-   - 将 `manifest.json` 和 `background.js` 保存到一个文件夹
-   - 确保 `icon_on.png` 和 `icon_off.png` 存在
+## ⚠️ Important Notice
+This extension uses a fixed proxy server URL, which is set to `https://your-proxy-url.com/` by default.  
+**Before using the extension, replace this URL with your own proxy server in the `background.js` file.** Otherwise, the extension will not function properly.
 
-2. **加载扩展**
-   - 打开 Chrome，进入 **扩展管理页面** (`chrome://extensions/`)
-   - **启用开发者模式**
-   - 点击 **加载已解压的扩展**，选择扩展目录
+## Installation
+1. **Download the extension files**
+   - Save `manifest.json` and `background.js` to a folder.
+   - Ensure `icon_on.png` and `icon_off.png` exist.
 
-3. **测试代理功能**
-   - 访问任意网站，URL 应该会自动添加代理前缀
-   - 例如访问 `https://store.steampowered.com/` 后，会变成 `https://your-proxy-url.com/https://store.steampowered.com/`
+2. **Edit `background.js`**
+   - Open `background.js` and locate the following code:
+     ```javascript
+     const proxyUrl = "https://your-proxy-url.com/";
+     ```
+   - **Replace `proxyUrl` with your actual proxy server address.**
 
-## 使用方法
-- **点击扩展图标** 可启用或禁用代理
-- **图标变化**
-  - 🔴 **红色图标** 代表代理关闭
-  - 🟢 **绿色图标** 代表代理启用
+3. **Load the extension**
+   - Open **Chrome Extensions Page** (`chrome://extensions/`)
+   - **Enable Developer Mode**
+   - Click **Load Unpacked Extension** and select the extension folder.
 
-## 代码文件
-- `manifest.json`：扩展的配置文件
-- `background.js`：主要的代理逻辑
-- `icon_on.png` / `icon_off.png`：扩展图标
+4. **Test the proxy function**
+   - Open any website, and the URL should automatically be prefixed with the proxy.
+   - Example: Visiting `https://store.steampowered.com/` will change to `https://your-proxy-url.com/https://store.steampowered.com/`.
 
-## 许可证
-MIT License - 自由修改和分发
+## Usage
+- **Click the extension icon** to enable or disable proxying.
+- **Icon Changes**:
+  - 🟢 **Green Icon** → Proxy is enabled.
+  - 🔴 **Red Icon** → Proxy is disabled.
+
+## File Overview
+- `manifest.json`: Chrome extension configuration file.
+- `background.js`: Handles proxy logic (**must replace `proxyUrl`**).
+- `icon_on.png` / `icon_off.png`: Extension icons.
+
+## License
+MIT License - Free to modify and distribute.
 
 ---
 
-如果你需要添加更多说明，比如 **特定网站规则** 或 **高级功能**，可以随时让我帮你调整！🚀
+Now users will be clearly informed to replace the proxy URL before using the extension! If you'd like further refinements, let me know 🚀  
