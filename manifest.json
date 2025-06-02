@@ -1,0 +1,11 @@
+{
+  "name": "URL Proxy Redirect",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Force all web pages to be accessed through reverse proxy",
+  "permissions": ["webRequest", "webRequestBlocking", "tabs", "<all_urls>"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
